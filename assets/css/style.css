@@ -1,0 +1,68 @@
+.header{
+	border-bottom: 2px solid #000;
+}
+
+.filter > h1{
+	display: inline-block;
+	text-transform: capitalize;
+}
+
+.filter-container{
+	z-index: 1000;
+	position: absolute;
+	top: 150px;
+	bottom: 0;
+	left: 0;
+	width: 600px;
+	overflow: auto;
+	background-color: #fff;
+}
+
+.filter-btn{
+	margin-left: 10px;
+	margin-bottom: 20px;
+}
+
+.poke-item{
+	padding: 15px 15px 15px 0px;
+}
+
+.poke-item > a {
+	text-decoration: none;
+}
+
+.poke-item-container {
+	border-radius: 15px;
+	background-color: #ddd;
+	padding: 15px;
+}
+
+.poke-item-container > h1 {
+	margin-top: 10px;
+	text-transform: capitalize;
+	color: #000;
+}
+
+.poke-item-container:hover > h1{
+	text-decoration: none;
+}
+
+.poke-item-image{
+	position: relative;
+	width: 100%;
+	height: 250px;
+	overflow: hidden;
+}
+
+.poke-item-image > img {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	width: 100%;
+	height: auto;
+}
+
+.poke-item > a:hover .poke-item-image > img {
+	
+}

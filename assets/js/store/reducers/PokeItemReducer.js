@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 const commentInitialState = {
-	pokemonsData : []
+	pokemonsData : [] // for storing all single pokemon data
 };
 
 export default function reducer (state=commentInitialState, action) {

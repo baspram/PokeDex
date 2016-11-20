@@ -1,9 +1,10 @@
 import axios from 'axios';
 
-export function fetchPokemons(){
+// fetch intial pokemons data
+export function fetchPokemons(limit){
 	return function(dispatch){
 		dispatch({type:"FETCH_POKEMONS"});
-		axios.get('https://crossorigin.me/http://pokeapi.co/api/v2/pokemon?limit=20')
+		axios.get('https://crossorigin.me/http://pokeapi.co/api/v2/pokemon?limit=' + limit)
 			.then(function(response){
 				var pokemons = response.data.results;
 				var count = response.data.count;
@@ -22,6 +23,7 @@ export function fetchPokemons(){
 	};
 };
 
+// fetch pokemons data for infintie scroll
 export function fetchMorePokemons(url){
 	return function(dispatch){
 		var getUrl = "https://crossorigin.me/" + url;

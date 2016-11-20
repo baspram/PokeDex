@@ -1,10 +1,10 @@
 import _ from 'lodash';
 
 const commentInitialState = {
-	types : [],
-	fetching : false,
-	fetched : false,
-	error : false
+	types : [], // storing all pokemon types
+	fetching : false, // fetching trigger
+	fetched : false, // fethced trigger
+	error : false // error trigger
 };
 
 export default function reducer (state=commentInitialState, action) {

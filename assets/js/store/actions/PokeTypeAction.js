@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+// fetch all pokemon type
 export function fetchType(){
 	return function(dispatch){
 		dispatch({type: "FETCH_TYPE"});

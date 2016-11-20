@@ -1,12 +1,12 @@
 import _ from 'lodash';
 
 const commentInitialState = {
-	count: "",
-	pokemons : [],
-	nextUrl: "",
-	fetching : false,
-	fetched : false,
-	error : false,
+	count: "", // all pokemon count
+	pokemons : [], // all pokemon initial data (name & url)
+	nextUrl: "", //  next url for infinite scroll
+	fetching : false, // for fetching trigger
+	fetched : false, // for fetched trigger
+	error : false // for error trigger
 };
 
 export default function reducer (state=commentInitialState, action) {

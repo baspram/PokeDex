@@ -1,22 +1,22 @@
 import React from 'react';
 
-import axios from 'axios';
-
 import PokeFilter from '../components/PokeFilter';
 import PokeList from '../components/PokeList';
 
 export default class Home extends React.Component {
-	constructor(props, context){
-		super(props, context);
+	constructor(props){
+		super(props);
 		this.state = {
 			filter : "all"
 		};
 	}
+
   changeFilter(typeName){
     this.setState({
       filter : typeName
     });
   }
+
 	render() {
 		return (
 			<div>
@@ -24,8 +24,10 @@ export default class Home extends React.Component {
           filter = {this.state.filter}
           handleChangeFilter = {this.changeFilter.bind(this)} />
 				<PokeList
-          filter = {this.state.filter} />
+          filter = {this.state.filter} 
+          perPage = {20}/>
 			</div>
 		)
 	}
+  
 }

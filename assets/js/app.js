@@ -17,7 +17,7 @@ import Single from './pages/Single';
 
 ReactDOM.render(
 	<Provider store={store}>
-		<Router history={hashHistory}>
+		<Router onUpdate={() => window.scrollTo(0, 0)} history={hashHistory}>
 			<Route path="/" component={MainLayout}>
 				<IndexRoute component={Home}> </IndexRoute>
 				<Route path="pokemon/:name" component={Single}> </Route>

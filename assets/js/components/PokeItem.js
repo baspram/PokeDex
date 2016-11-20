@@ -11,10 +11,14 @@ import _ from 'lodash';
 })
 export default class PokeItem extends React.Component {
 	componentWillMount(){
+		// fetch more specific data of pokemon for filtering
 		this.props.dispatch(fetchPokemonData(this.props.data.name, this.props.data.url));
 	}
+
 	render() {
+		// get this fetched pokemon data
 		var pokeData = _.filter(this.props.pokemonsData, function(item){
+			// check if this pokemon type is same as filter
 			var isFilter = true;
 			if (this.props.filter != 'all'){
 				var types = _.filter(item.data.types, function(item){
@@ -27,31 +31,26 @@ export default class PokeItem extends React.Component {
 			return ((item.name == this.props.data.name) && item.fetched && isFilter);
 		}.bind(this));
 
-		var showItem = function (){
-			if(pokeData.length){
-				pokeData = pokeData[0];
-				var imgSrc = "https://crossorigin.me/" + pokeData.data.sprites.front_default;
-				return (
-					<div className="col-md-3 poke-item">
-						<Link to={"pokemon/"+this.props.data.name}> 
-							<div className="poke-item-container">
-								<div className="poke-item-image">
-									<img src={imgSrc}>
-									</img>
-								</div>
-								<h1> {pokeData.name} </h1>
+		// if fetched data have this pokemon data
+		if(pokeData.length){
+			pokeData = pokeData[0];
+			var imgSrc = pokeData.data.sprites.front_default;
+			return (
+				<div className="col-md-4 poke-item">
+					<Link to={"pokemon/"+this.props.data.name}> 
+						<div className="poke-item-container">
+							<div className="poke-item-image">
+								<img src={imgSrc}>
+								</img>
 							</div>
-						</Link>
-					</div>
-				);
-			}
+							<h1> {pokeData.name} </h1>
+						</div>
+					</Link>
+				</div>
+			);
+		} else {
 			return null;	
-		}.bind(this);
-
-		return (
-			<div>
-				{showItem()}
-			</div>
-		)
+		}
 	}
+
 }

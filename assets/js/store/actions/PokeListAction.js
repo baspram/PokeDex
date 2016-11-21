@@ -4,7 +4,7 @@ import axios from 'axios';
 export function fetchPokemons(limit){
 	return function(dispatch){
 		dispatch({type:"FETCH_POKEMONS"});
-		return axios.get('https://crossorigin.me/http://pokeapi.co/api/v2/pokemon?limit=' + limit)
+		return axios.get('http://cors.io/?http://pokeapi.co/api/v2/pokemon?limit=' + limit)
 						.then(function(response){
 							var pokemons = response.data.results;
 							var count = response.data.count;
@@ -26,7 +26,7 @@ export function fetchPokemons(limit){
 // fetch pokemons data for infintie scroll
 export function fetchMorePokemons(url){
 	return function(dispatch){
-		var getUrl = "https://crossorigin.me/" + url;
+		var getUrl = "http://cors.io/?" + url;
 		return axios.get(getUrl)
 						.then(function(response){
 							var pokemons = response.data.results;

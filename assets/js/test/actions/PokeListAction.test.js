@@ -17,8 +17,8 @@ describe('<PokeListAction />', () => {
 
 	it('FETCH_POKEMONS_COMPLETE when FETCH_POKEMONS done', () => {
 	  
-		nock('https://crossorigin.me/')
-      .get('/http://pokeapi.co/api/v2/pokemon?limit=20')
+		nock('http://cors.io/')
+      .get('/?http://pokeapi.co/api/v2/pokemon?limit=20')
       .reply(200, successResponse)
 
  		const expectedActions = [
@@ -41,10 +41,10 @@ describe('<PokeListAction />', () => {
 
 	it('FETCH_MORE_POKEMONS_COMPLETE done', () => {
 	  
-		nock('https://crossorigin.me/')
-      .get('/http://pokeapi.co/api/v2/pokemon?limit=20&offset=20')
+		nock('http://cors.io/')
+      .get('/?http://pokeapi.co/api/v2/pokemon?limit=20&offset=20')
       .reply(200, successResponse)
-successResponse
+
  		const expectedActions = [
  			{type: "FETCH_MORE_POKEMONS_COMPLETE", value: {
  					pokemons : successResponse.results,

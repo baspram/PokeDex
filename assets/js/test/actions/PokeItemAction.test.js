@@ -18,8 +18,8 @@ describe('<PokeItemAction />', () => {
 
 	it('FETCH_POKEMON_DATA_COMPLETE when FETCH_POKEMON_DATA done', () => {
 	  
-		nock('https://crossorigin.me')
-      .get("/"+pokeUrl)
+	nock('http://cors.io/')
+      .get("/?"+pokeUrl)
       .reply(200, pokeData)
 
  		const expectedActions = [

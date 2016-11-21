@@ -3,8 +3,7 @@ import axios from 'axios';
 // fetch single pokemon data
 export function fetchPokemonData(name, url){
 	return function(dispatch){
-		var newUrl = 'https://crossorigin.me/' + url;
-		console.log("NewURL", newUrl);
+		var newUrl = 'http://cors.io/?' + url;
 		dispatch({type: "FETCH_POKEMON_DATA", value: name});
 		return axios.get(newUrl)
 						.then(function(response){
@@ -16,7 +15,6 @@ export function fetchPokemonData(name, url){
 									data : data
 								}});
 						}).catch(function(error){
-							console.log("ERROR", error);
 							dispatch({
 								type:"FETCH_POKEMON_DATA_ERROR",
 								value: {

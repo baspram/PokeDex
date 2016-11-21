@@ -17,8 +17,8 @@ describe('<PokeTypeAction />', () => {
 
 	it('FETCH_TYPE_COMPLETE when FETCH_TYPE done', () => {
 	  
-		nock('https://crossorigin.me/')
-      .get('/http://pokeapi.co/api/v2/type')
+		nock('http://cors.io/')
+      .get('/?http://pokeapi.co/api/v2/type')
       .reply(200, typesSuccessResponse)
 
  		const expectedActions = [

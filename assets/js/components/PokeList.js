@@ -39,8 +39,10 @@ export default class PokeList extends React.Component {
       nextUrl = nextUrl.replace(('limit=' + this.props.perFilteredPage), ('limit=' + this.props.perPage));
     }
 
-    // fetch more data
-    this.props.dispatch(fetchMorePokemons(nextUrl));
+    // fetch more data if not fetching
+    if(!this.props.fetching){
+      this.props.dispatch(fetchMorePokemons(nextUrl));  
+    }
     
     // just to make sure inital count is fetched before changing state
     if(this.props.count > 0){

@@ -5,14 +5,14 @@ A React Redux Project using [pokeapi.co](www.pokeapi.co) to browse Pokemons. COR
 ### Installation
 You can run this project locally
 1. Clone or Download this repository
-2. Assuming you already have node and npm installed, install this project dependencies:
-	```
-	$ npm install
-	```
+2. Assuming you already have node and npm installed, install this project dependencies
+```
+$ npm install
+```
 3. If all dependencies installed without error, run this command
-	```
-	$ npm run start
-	```
+```
+$ npm run start
+```
 4. You should be able to see this application [localhost:8080](http://localhost:8080)
 
 ### Unit Testing

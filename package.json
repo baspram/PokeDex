@@ -5,9 +5,8 @@
   "main": "webpack.config.js",
   "scripts": {
     "build": "webpack -p",
-    "start": "node server.js",
-    "dev": "webpack-dev-server --inline",
-    "test": "node_modules/.bin/mocha -r jsdom-global/register --compilers js:babel-core/register  assets/js/**/*.test.js"
+    "start": "node_modules/.bin/webpack-dev-server --inline",
+    "test": "node_modules/.bin/mocha -r jsdom-global/register --compilers js:babel-core/register  assets/js/test/**/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -30,6 +29,7 @@
     "json-loader": "^0.5.4",
     "lodash": "^4.16.4",
     "mocha": "^3.1.2",
+    "nock": "^9.0.2",
     "path": "^0.12.7",
     "react": "^15.3.2",
     "react-addons-css-transition-group": "^15.3.2",
@@ -42,9 +42,9 @@
     "react-router": "^3.0.0",
     "redux": "^3.6.0",
     "redux-logger": "^2.7.4",
+    "redux-mock-store": "^1.2.1",
     "redux-promise-middleware": "^4.1.0",
     "redux-thunk": "^2.1.0",
-    "sinon": "^1.17.6",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.2",

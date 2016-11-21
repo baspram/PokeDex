@@ -187,6 +187,7 @@
 	font-size: 50px;
 	font-weight: bold;
 	text-transform: capitalize;
+	margin-bottom: 50px
 }
 
 th{
@@ -217,26 +218,18 @@ td {
 	height: 200px;
 }
 
-#circularG, #circularS{
+#circularG{
 	position:absolute;
 	top: 0;
 	bottom: 0;
 	left : 0;
 	right: 0;
+	width:158px;
+	height:158px;
 	margin: auto;
 }
 
-#circularG{
-	width:158px;
-	height:158px;
-}
-
-#circularS{
-	width: 36px;
-	height: 36px;
-}
-
-.circularG, .circularS{
+.circularG{
 	position:absolute;
 	background-color:#b0120a;
 	width:37px;
@@ -268,17 +261,7 @@ td {
 		-moz-animation-direction:normal;
 }
 
-.circularS{
-	width:8px;
-	height:8px;
-	border-radius:5px;
-		-o-border-radius:5px;
-		-ms-border-radius:5px;
-		-webkit-border-radius:5px;
-		-moz-border-radius:5px;
-}
-
-#circularG_1, #circularS_1{
+#circularG_1{
 	left:0;
 	top:63px;
 	animation-delay:0.41s;
@@ -288,11 +271,7 @@ td {
 		-moz-animation-delay:0.41s;
 }
 
-#circularS_1{
-	top: 14px;
-}
-
-#circularG_2,#circularS_2{
+#circularG_2{
 	left:16px;
 	top:16px;
 	animation-delay:0.55s;
@@ -302,12 +281,7 @@ td {
 		-moz-animation-delay:0.55s;
 }
 
-#circularS_2{
-	top: 4px;
-	left: 4px;
-}
-
-#circularG_3, #circularS_3{
+#circularG_3{
 	top:0;
 	left:63px;
 	animation-delay:0.69s;
@@ -317,11 +291,7 @@ td {
 		-moz-animation-delay:0.69s;
 }
 
-#circularS_3{
-	left: 14px;
-}
-
-#circularG_4, #circularS_4{
+#circularG_4{
 	right:16px;
 	top:16px;
 	animation-delay:0.83s;
@@ -331,12 +301,7 @@ td {
 		-moz-animation-delay:0.83s;
 }
 
-#circularS_4{
-	right:4px;
-	top:4px;
-}
-
-#circularG_5, #circularS_5{
+#circularG_5{
 	right:0;
 	top:63px;
 	animation-delay:0.97s;
@@ -345,12 +310,7 @@ td {
 		-webkit-animation-delay:0.97s;
 		-moz-animation-delay:0.97s;
 }
-
-#circularS_5{
-	top: 14px;
-}
-
-#circularG_6, #circularS_6{
+#circularG_6{
 	right:16px;
 	bottom:16px;
 	animation-delay:1.1s;
@@ -359,13 +319,7 @@ td {
 		-webkit-animation-delay:1.1s;
 		-moz-animation-delay:1.1s;
 }
-
-#circularS_6{
-	right: 4px;
-	bottom: 4px;
-}
-
-#circularG_7, #circularS_7{
+#circularG_7{
 	left:63px;
 	bottom:0;
 	animation-delay:1.24s;
@@ -374,12 +328,7 @@ td {
 		-webkit-animation-delay:1.24s;
 		-moz-animation-delay:1.24s;
 }
-
-#circularS_7{
-	left: 14px;
-}
-
-#circularG_8, #circularS_8{
+#circularG_8{
 	left:16px;
 	bottom:16px;
 	animation-delay:1.38s;
@@ -388,12 +337,6 @@ td {
 		-webkit-animation-delay:1.38s;
 		-moz-animation-delay:1.38s;
 }
-
-#circularS_8{
-	left: 4px;
-	bottom: 4px;
-}
-
 
 @keyframes bounce_circularG{
 	0%{

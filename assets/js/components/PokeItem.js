@@ -1,8 +1,8 @@
 import React from 'react';
-import {Link} from 'react-router';
 import {connect} from 'react-redux';
 import {fetchPokemonData} from '../store/actions/PokeItemAction';
 import _ from 'lodash';
+import PokeItemContent from './PokeItemContent';
 
 @connect(function(store){
 	return {
@@ -36,17 +36,9 @@ export default class PokeItem extends React.Component {
 			pokeData = pokeData[0];
 			var imgSrc = pokeData.data.sprites.front_default;
 			return (
-				<div className="col-md-4 poke-item">
-					<Link to={"pokemon/"+this.props.data.name}> 
-						<div className="poke-item-container">
-							<div className="poke-item-image">
-								<img src={imgSrc}>
-								</img>
-							</div>
-							<h1> {pokeData.name} </h1>
-						</div>
-					</Link>
-				</div>
+				<PokeItemContent
+				 name = {this.props.data.name}
+				 imgSrc = {imgSrc}/>
 			);
 		} else {
 			return null;	

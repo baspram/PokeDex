@@ -15,48 +15,54 @@ export default class PokeSingleItem extends React.Component {
 		}
 		return "Undefined";
 	}
+	handleObjectType(value){
+		var object = _.map(value, function(value, key){
+			return (
+				<li key = {key}> 
+					{key} : {this.getValue(value)}
+				</li>
+			)
+		}.bind(this));
+		return (
+			<ul>
+				{object}
+			</ul>
+		);
+	}
+	handleArrayType(value){
+		if(value.length > 1){ // if more than 1 then print as list
+			var array = _.map(value, function(item, index){
+				return (
+					<li key = {index}>
+						{this.getValue(item)}
+					</li>
+				)
+			}.bind(this));
+			return (
+				<ul>
+					{array}
+				</ul>
+			);
+		} else { // if just one print as div
+			return (
+				<div>
+					{this.getValue(value[0])}
+				</div>
+			)
+		}
+		
+	}
 	getValue(value){ // to produce list from pokemon value using recursive approach
 		
 		// get value type
 		var objectType = this.checkType(value);
-
 		switch(objectType){
 			case "Object" : { // if value is object print key : value
-				var object = _.map(value, function(value, key){
-					return (
-						<li key = {key}> 
-							{key} : {this.getValue(value)}
-						</li>
-					)
-				}.bind(this));
-				return (
-					<ul>
-						{object}
-					</ul>
-				);
+				return this.handleObjectType(value);
 				break;
 			}
 			case "Array" : { // if array the print value for each item
-				if(value.length > 1){ // if more than 1 then print as list
-					var array = _.map(value, function(item, index){
-						return (
-							<li key = {index}>
-								{this.getValue(item)}
-							</li>
-						)
-					}.bind(this));
-					return (
-						<ul>
-							{array}
-						</ul>
-					);
-				} else { // if just one print as div
-					return (
-						<div>
-							{this.getValue(value[0])}
-						</div>
-					)
-				}
+				return this.handleArrayType(value);
 				break;
 			}
 			default : { // for String or Boolean, just print
@@ -66,7 +72,6 @@ export default class PokeSingleItem extends React.Component {
 				return null;
 			}
 		}
-
 	}
 	render() {
 		var pokeData = this.props.data;

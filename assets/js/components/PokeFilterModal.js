@@ -2,7 +2,6 @@ import React from 'react';
 
 export default class PokeFilterModal extends React.Component {
 	changeFilter(e){
-		console.log("change filter to: " + e.target.id);
 		this.props.handleChangeFilter(e.target.id);
 	}
 	render(){
@@ -10,9 +9,9 @@ export default class PokeFilterModal extends React.Component {
 		var typeList = types.map(function(item, index){
 			return (
 				<li className="filter-item"
-				id = {item.name}
-				key = {index}
-				onClick = {this.changeFilter.bind(this)}>
+					id = {item.name}
+					key = {index}
+					onClick = {this.changeFilter.bind(this)}>
 					{item.name}
 				</li>
 			)

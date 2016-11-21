@@ -85,7 +85,7 @@ export default class PokeList extends React.Component {
 
 PokeList.defaultProps = {
   perPage: 20, // normal sum for fetching data of 'all' type
-  perFilteredPage: 80 // sum for fetching data of type beside 'all'
+  perFilteredPage: 100 // sum for fetching data of type beside 'all' to increase change more pokemon fetched
 };
 
 var Pokemons = {

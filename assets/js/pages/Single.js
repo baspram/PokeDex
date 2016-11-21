@@ -31,14 +31,14 @@ export default class Single extends React.Component {
 				pokeData = pokeData[0].data;		
 				return (
 					<PokeSingleItem
-					data = {pokeData} />
+						data = {pokeData} />
 				)
 			} else {
 				return (
 				  <div className="col-md-12 single-loader">
-    		        <BigLoader />
-    		      </div>				
-    		    )
+		        <BigLoader />
+		      </div>				
+		    )
 			}
 		}.bind(this);
 
